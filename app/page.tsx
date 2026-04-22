@@ -6,6 +6,7 @@ import Solution from '@/components/Solution'
 import Authority from '@/components/Authority'
 import TestimonialsVideo from '@/components/TestimonialsVideo'
 import Plans from '@/components/Plans'
+import EntryOffer from '@/components/EntryOffer'
 import Differentials from '@/components/Differentials'
 import Objections from '@/components/Objections'
 import CTAFinal from '@/components/CTAFinal'
@@ -22,6 +23,7 @@ export default function Home() {
       <Authority />
       <TestimonialsVideo />
       <Plans />
+      <EntryOffer />
       <Differentials />
       <Objections />
       <CTAFinal />

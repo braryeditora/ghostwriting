@@ -30,7 +30,7 @@ const plans = [
             'Entrega em formato editável',
             'Parcelamento disponível',
         ],
-        cta: 'Quero o Profissional',
+        cta: 'Quero entender meu livro',
         msg: 'Olá, tenho interesse no plano Profissional.',
         featured: true,
         badge: 'Mais escolhido',
