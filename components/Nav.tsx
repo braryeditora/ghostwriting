@@ -9,7 +9,7 @@ export default function Nav() {
     const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 40)
+        const onScroll = () => setScrolled(window.scrollY > 20)
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
@@ -21,12 +21,13 @@ export default function Nav() {
                 top: 0,
                 left: 0,
                 right: 0,
-                zIndex: 50,
-                transition: 'all 0.3s',
-                backgroundColor: scrolled ? 'var(--color-cream-50)' : 'transparent',
-                borderBottom: scrolled
-                    ? '1px solid rgba(0,0,0,0.08)'
-                    : '1px solid transparent',
+                zIndex: 1000,
+                backgroundColor: scrolled
+                    ? 'rgba(247, 244, 238, 0.98)'
+                    : 'rgba(247, 244, 238, 0.92)',
+                backdropFilter: 'blur(8px)',
+                borderBottom: '1px solid var(--color-cream-border)',
+                transition: 'all 0.25s ease',
             }}
         >
             <div
@@ -35,7 +36,7 @@ export default function Nav() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '1.25rem 1.5rem',
+                    padding: '1.1rem 1.5rem',
                     maxWidth: '1200px',
                     margin: '0 auto',
                 }}
@@ -55,27 +56,31 @@ export default function Nav() {
                 </div>
 
                 <nav
+                    className="md-nav"
                     style={{
                         display: 'none',
                         gap: '2.5rem',
+                        alignItems: 'center',
                     }}
-                    className="md-nav"
                 >
-                    {['Como funciona', 'Planos', 'Sobre'].map((item) => (
+                    {[
+                        { label: 'Como funciona', href: '#como-funciona' },
+                        { label: 'Planos', href: '#planos' },
+                        { label: 'Sobre', href: '#sobre' },
+                    ].map((item) => (
                         <a
-                            key={item}
-                            href={`#${item.toLowerCase().replace(' ', '-')}`}
+                            key={item.label}
+                            href={item.href}
                             style={{
                                 fontSize: '0.8rem',
-                                fontWeight: 500,
+                                fontWeight: 600,
                                 letterSpacing: '0.1em',
                                 textTransform: 'uppercase',
                                 color: 'var(--color-ink-muted)',
                                 textDecoration: 'none',
-                                transition: 'color 0.2s',
                             }}
                         >
-                            {item}
+                            {item.label}
                         </a>
                     ))}
                 </nav>
@@ -84,7 +89,6 @@ export default function Nav() {
                     href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-dark"
                     style={{
                         fontSize: '0.75rem',
                         display: 'inline-flex',
@@ -94,7 +98,6 @@ export default function Nav() {
                         color: '#ffffff',
                         padding: '0.9rem 1.2rem',
                         textDecoration: 'none',
-                        borderRadius: '0px',
                         fontWeight: 600,
                         letterSpacing: '0.05em',
                     }}
