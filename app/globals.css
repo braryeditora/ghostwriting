@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
+@theme {
+  --color-cream: #F7F4EE;
+  --color-cream-dark: #EDE8DC;
+  --color-cream-border: #DDD8CC;
+  --color-navy: #0D1F2D;
+  --color-navy-light: #162D40;
+  --color-navy-muted: #4A6278;
+  --color-gold: #C5A028;
+  --color-gold-light: #DDB93A;
+  --color-ink: #1A1A1A;
+  --color-ink-muted: #6B6B6B;
+  --color-white: #FFFFFF;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-white);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .section-pad {
+    padding: 6rem 1.5rem;
+  }
+
+  .wrap {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  .wrap-narrow {
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-ink);
+    color: var(--color-white);
+    padding: 0.875rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-dark:hover {
+    background-color: #333;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--color-ink);
+    color: var(--color-ink);
+    padding: 0.875rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--color-ink);
+    color: var(--color-white);
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    padding: 0.875rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-gold:hover {
+    background-color: var(--color-gold-light);
+  }
+
+  .gold-bar {
+    width: 2.5rem;
+    height: 2px;
+    background-color: var(--color-gold);
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding: 7rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding: 8rem 4rem;
+  }
 }
