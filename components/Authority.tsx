@@ -25,7 +25,7 @@ export default function Authority() {
                     }}
                 >
                     <img
-                        src="/images/OrlandoCarvalho.jpg"
+                        src="/images/orlandocarvalho.jpg"
                         alt="Orlando Carvalho"
                         style={{
                             width: '100%',
