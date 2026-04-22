@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Authority() {
     return (
         <section
@@ -22,17 +24,18 @@ export default function Authority() {
                         aspectRatio: '1 / 1',
                         overflow: 'hidden',
                         backgroundColor: 'var(--color-navy)',
+                        position: 'relative',
                     }}
                 >
-                    <img
+                    <Image
                         src="/images/orlandocarvalho.jpg"
                         alt="Orlando Carvalho"
+                        fill
                         style={{
-                            width: '100%',
-                            height: '100%',
                             objectFit: 'cover',
-                            display: 'block',
                         }}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
                     />
                 </div>
 
