@@ -3,52 +3,54 @@ const WA = 'https://wa.me/5521983461734?text='
 const plans = [
     {
         name: 'Fundação',
-        price: 'R$ 3.500',
-        to: 'R$ 4.500',
-        desc: 'Para quem quer ver o projeto tomar forma antes de ir até o fim.',
+        price: 'R$ 4.500',
+        to: '',
+        desc: 'Para transformar sua ideia em um projeto claro e estruturado.',
         items: [
-            'Entrevista de imersão',
-            'Direção editorial',
+            'Entrevista de imersão profunda',
+            'Diagnóstico da sua mensagem',
             'Estrutura completa do livro',
-            '1 a 2 capítulos escritos',
-            'Documento de voz e identidade narrativa',
+            'Direção editorial personalizada',
+            'Posicionamento do conteúdo',
+            'Escrita dos primeiros capítulos estratégicos',
         ],
-        cta: 'Quero o Fundação',
-        msg: 'Olá, tenho interesse no plano Fundação.',
+        cta: 'Quero estruturar meu livro',
+        msg: 'Olá, quero estruturar meu livro.',
         featured: false,
     },
     {
         name: 'Profissional',
-        price: 'R$ 6.000',
-        to: 'R$ 8.000',
-        desc: 'Para quem quer o manuscrito completo, do zero ao final.',
+        price: 'R$ 7.500',
+        to: '',
+        desc: 'Para transformar seu conhecimento em um livro completo.',
         items: [
             'Tudo do Fundação',
             'Livro completo (8–12 capítulos)',
+            'Organização da narrativa e fluidez',
             'Revisão base incluída',
             'Até 2 rodadas de ajuste',
             'Entrega em formato editável',
-            'Parcelamento disponível',
         ],
-        cta: 'Quero entender meu livro',
-        msg: 'Olá, tenho interesse no plano Profissional.',
+        cta: 'Quero meu livro pronto',
+        msg: 'Olá, quero meu livro pronto.',
         featured: true,
         badge: 'Mais escolhido',
     },
     {
         name: 'Legado',
-        price: 'R$ 12.000',
-        to: 'R$ 18.000',
-        desc: 'Para quem quer o livro e o posicionamento completo do autor.',
+        price: 'R$ 12.500',
+        to: '',
+        desc: 'Para transformar seu livro em posicionamento e autoridade.',
         items: [
             'Tudo do Profissional',
             'Bio do autor posicionada',
-            'Prefácio e orelha',
-            'Estratégia de lançamento',
-            'Orientação de posicionamento',
+            'Prefácio e orelha estratégica',
+            'Estrutura para lançamento',
+            'Direcionamento de posicionamento',
+            'Ajustes finais para publicação',
         ],
-        cta: 'Quero o Legado',
-        msg: 'Olá, tenho interesse no plano Legado.',
+        cta: 'Quero meu posicionamento completo',
+        msg: 'Olá, quero meu posicionamento completo.',
         featured: false,
     },
 ]
@@ -157,7 +159,13 @@ export default function Plans() {
                                             marginBottom: '0.2rem',
                                         }}
                                     >
-                                        {plan.price} <span style={{ fontWeight: 400 }}>a</span> {plan.to}
+                                        {plan.price}
+                                        {plan.to && (
+                                            <>
+                                                {' '}
+                                                <span style={{ fontWeight: 400 }}>a</span> {plan.to}
+                                            </>
+                                        )}
                                     </div>
 
                                     <p
@@ -233,6 +241,18 @@ export default function Plans() {
                         )
                     })}
                 </div>
+
+                <p
+                    style={{
+                        marginTop: '1.5rem',
+                        textAlign: 'center',
+                        color: 'var(--color-ink-muted)',
+                        fontSize: '0.95rem',
+                        lineHeight: 1.6,
+                    }}
+                >
+                    Cada projeto é único. Ajustamos o escopo ideal na reunião estratégica.
+                </p>
             </div>
         </section>
     )
