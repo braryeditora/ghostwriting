@@ -146,3 +146,7 @@ body {
     padding: 8rem 4rem;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
